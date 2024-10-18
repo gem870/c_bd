@@ -10,7 +10,7 @@ const path = require('path');
 const main_blog_routes = require('./routes/main_blog_routes')
 const main_project_routes = require('./routes/main_project_routes')
 const message_rout = require('./routes/main_message_routes')
-const DataBase = require('../backend/config/db')
+const Connection = require('../backend/config/db')
 
 
 
@@ -32,13 +32,4 @@ app.use('/message', message_rout)
 
 
 
-mongoose.connect(DataBase)
-.then(()=>{
-    app.listen(process.env.PORT, () => {
-        console.log("listening at port ", process.env.PORT)
-    })
-})
-.catch((err) => {
-    console.log(err.message)
-})
-
+const connection = new Connection()
