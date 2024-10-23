@@ -1,8 +1,12 @@
 const Product = require("../schemas/messageSchema");
+//const MessgServiice = require('../service/message_service');
+import { MessgService} from '../service/message_service';
+
 
 const getProducts = async (req, res) => {
   try {
-    const products = await Product.find({});
+    const service = new MessageService()
+    const products = await MessgService.getProduct();
     res.status(200).json(products);
   } catch (error) {
     res.status(500).json({ message: error.message });
