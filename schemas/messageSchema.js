@@ -3,7 +3,7 @@ const schema = mongoose.Schema
 
 // MY MODEL STRUCTURE OF MY API(MONGODB)
 
-const blogSchema = new schema({
+const mssgSchema = new schema({
     name: {
         type: String,
         requireed: true
@@ -19,4 +19,4 @@ const blogSchema = new schema({
 }, {timestamps: true});
 
 
-module.exports = mongoose.model('MESSAGE_SCHEMA', blogSchema);
+module.exports = mongoose.model('MESSAGE_SCHEMA', mssgSchema);

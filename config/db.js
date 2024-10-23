@@ -17,9 +17,6 @@ class MongoConnection {
 
             mongoose.connect(mongoUri)
                 .then(() => {
-                    app.listen(process.env.PORT, () => {
-                        console.log("listening at port ", process.env.PORT)
-                    })
                     console.log('Database connected successfully');
                 })
                 .catch(err => {
